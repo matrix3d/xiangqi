@@ -3,18 +3,20 @@
 <!--Any modifications you make may be lost.-->
 <flex-config>
   <target-player>10.1</target-player>
+  <benchmark>false</benchmark>
+  <static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
   <compiler>
     <define append="true">
       <name>CONFIG::debug</name>
-      <value>true</value>
-    </define>
-    <define append="true">
-      <name>CONFIG::release</name>
       <value>false</value>
     </define>
     <define append="true">
+      <name>CONFIG::release</name>
+      <value>true</value>
+    </define>
+    <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/11/19'</value>
+      <value>'2013/12/10'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -28,7 +30,9 @@
       <name>CONFIG::desktop</name>
       <value>false</value>
     </define>
-    <verbose-stacktraces>true</verbose-stacktraces>
+    <optimize>true</optimize>
+    <omit-trace-statements>true</omit-trace-statements>
+    <verbose-stacktraces>false</verbose-stacktraces>
     <source-path append="true">
       <path-element>D:\project\xiangqi\src</path-element>
       <path-element>D:\project\Hi-ReS-Stats-master\src</path-element>
@@ -41,7 +45,7 @@
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
   <default-size>
-    <width>800</width>
-    <height>600</height>
+    <width>500</width>
+    <height>500</height>
   </default-size>
 </flex-config>

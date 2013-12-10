@@ -99,16 +99,16 @@ package
 				if (tdis.parent) tdis.parent.removeChild(tdis);
 			}
 			
-			ai.doAI(true, 3);
-			trace(ai.count,ai.bestMove);
-			lastMove.graphics.clear();
-			lastMove.graphics.beginFill(0xffff, .5);
-			lastMove.graphics.drawCircle(ai.bestMove.tx * 50, ai.bestMove.ty * 50, 20);
+			ai.doAI(true, 2);
 			target = ai.bestMove;
 			board.makeMove(target);
 			var dis2:Sprite = piece2dis[target.piece];
+			lastMove.graphics.clear();
+			lastMove.graphics.lineStyle(0, 0xfff);
+			lastMove.graphics.moveTo(dis2.x, dis2.y);
 			dis2.x = target.tx * 50;
 			dis2.y = target.ty * 50;
+			lastMove.graphics.lineTo(dis2.x, dis2.y);
 			if (target.tpiece) {
 				tdis = piece2dis[target.tpiece];
 				if (tdis.parent) tdis.parent.removeChild(tdis);

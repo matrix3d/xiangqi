@@ -1,5 +1,6 @@
 package  
 {
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	/**
 	 * ...
@@ -12,8 +13,6 @@ package
 		public var piece:Piece;
 		public var area:Rectangle = new Rectangle(0, 0, 8, 9);
 		
-		/*private var targetPool:Vector.<MoveTarget> = new Vector.<MoveTarget>;
-		public var targetPoolPos:int = 0;*/
 		public function AllMove() 
 		{
 			
@@ -41,14 +40,8 @@ package
 			return arr;
 		}
 		
-		[Inline]
-		public final function getTargetFromPool():MoveTarget {
+		public  function getTargetFromPool():MoveTarget {
 			return new MoveTarget(null, null, piece);
-			/*if (targetPoolPos>=targetPool.length) {
-				targetPool.length = targetPoolPos + 1;
-				targetPool[targetPoolPos] = new MoveTarget(null, null, piece);
-			}
-			return targetPool[targetPoolPos++];*/
 		}
 	}
 

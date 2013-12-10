@@ -41,8 +41,7 @@ package
 			return arr;
 		}
 		
-		[Inline]
-		public final function xy(tx:int, ty:int,arr:Vector.<MoveTarget>):Boolean {
+		public function xy(tx:int, ty:int,arr:Vector.<MoveTarget>):Boolean {
 			var tp:Piece = board.getPiece(tx, ty);
 			if (tp) {
 				if (jump) {

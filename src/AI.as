@@ -22,7 +22,7 @@ package
 		public function doAI(red:Boolean,depth:int):void {
 			count = 0;
 			maxDepth = depth;
-			this.nega = red;
+			this.nega = !red;
 			negaMax(depth, red);
 		}
 		
@@ -40,11 +40,8 @@ package
 		
 		public function negaMax(depth:int, red:Boolean):int {
 			count++;
-			if (gameOver) {
-				return evaluation();
-			}
-			if (depth==0) {
-				return evaluation();
+			if (gameOver||depth==0) {
+				return red?evaluation():-evaluation();
 			}
 			var bestValue:int = -1000000;
 			var pieces:Array = red?board.redPieces:board.bluePieces;
