@@ -69,6 +69,28 @@ package
 			addChild(lastMove);
 			lastMove.mouseChildren = lastMove.mouseEnabled = false;
 			ai = new AI(board);
+			
+			graphics.lineStyle(0, 0xFF00FF);
+			for (var i:int = 0; i < 10;i++ ) {
+				graphics.moveTo(0, 50 * i);
+				graphics.lineTo(50*8, 50 * i);
+			}
+			for (i = 0; i < 9;i++ ) {
+				graphics.moveTo(50 * i, 0);
+				if(i!=0&&i!=8){
+				graphics.lineTo(50*i, 50 * 4);
+				graphics.moveTo(50 * i, 50 * 5);
+				}
+				graphics.lineTo(50*i, 50 * 9);
+			}
+			graphics.moveTo(50*3, 0);
+			graphics.lineTo(50*5, 50 * 2);
+			graphics.moveTo(50*5, 0);
+			graphics.lineTo(50*3, 50 * 2);
+			graphics.moveTo(50*3, 50*7);
+			graphics.lineTo(50*5, 50 * 9);
+			graphics.moveTo(50*5, 50*7);
+			graphics.lineTo(50*3, 50 * 9);
 		}
 		
 		private function dis_click(e:MouseEvent):void 
@@ -104,7 +126,7 @@ package
 			board.makeMove(target);
 			var dis2:Sprite = piece2dis[target.piece];
 			lastMove.graphics.clear();
-			lastMove.graphics.lineStyle(0, 0xfff);
+			lastMove.graphics.lineStyle(5, 0xfff,.5);
 			lastMove.graphics.moveTo(dis2.x, dis2.y);
 			dis2.x = target.tx * 50;
 			dis2.y = target.ty * 50;
