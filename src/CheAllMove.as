@@ -41,7 +41,7 @@ package
 			var tp:Piece = board.getPiece(tx, ty);
 			if (tp) {
 				if (tp.id*piece.id<0) {
-					var target:MoveTarget = getTargetFromPool();// new MoveTarget(null, null, piece);
+					var target:MoveTarget = new MoveTarget(null, null, piece);
 					target.tpiece = tp;
 					target.tx = tx;
 					target.ty = ty;
@@ -49,7 +49,7 @@ package
 				}
 				return true;
 			}
-			target = getTargetFromPool();//new MoveTarget(null,null,piece);
+			target = new MoveTarget(null,null,piece);
 			target.tx = tx;
 			target.ty = ty;
 			target.tpiece = null;

@@ -39,10 +39,6 @@ package
 			}
 			return arr;
 		}
-		
-		public  function getTargetFromPool():MoveTarget {
-			return new MoveTarget(null, null, piece);
-		}
 	}
 
 }

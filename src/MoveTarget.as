@@ -20,10 +20,6 @@ package
 			this.obstacle = obstacle;
 			this.offset = offset;
 		}
-		
-		public function toString():String {
-			return piece.x+":"+piece.y+" "+ tx + ":" + ty;
-		}
 	}
 
 }

@@ -46,7 +46,7 @@ package
 			if (tp) {
 				if (jump) {
 					if (tp.id*piece.id<0) {
-						var target:MoveTarget = getTargetFromPool();//new MoveTarget(null,null,piece);
+						var target:MoveTarget = new MoveTarget(null,null,piece);
 						target.tpiece = tp;
 						target.tx = tx;
 						target.ty = ty;
@@ -58,7 +58,7 @@ package
 				}
 			}else {
 				if (!jump) {
-					target = getTargetFromPool();//new MoveTarget(null,null,piece);
+					target = new MoveTarget(null,null,piece);
 					target.tx = tx;
 					target.ty = ty;
 					target.tpiece = null;

@@ -5,6 +5,7 @@ package
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
+	import flash.text.TextFormat;
 	import flash.utils.Dictionary;
 	import flash.utils.getTimer;
 	
@@ -42,6 +43,7 @@ package
 				var dis:Sprite = new Sprite;
 				dis.buttonMode = true;
 				var label:TextField = new TextField;
+				label.defaultTextFormat = new TextFormat("Consolas",14,0xcccccc,true);
 				label.autoSize = "left";
 				label.text = id2name[p.absId];
 				dis.addChild(label);
@@ -49,13 +51,9 @@ package
 				label.y = -label.height / 2;
 				label.selectable = label.mouseWheelEnabled = label.mouseEnabled = false;
 				if (p.id>0) {
-					dis.graphics.lineStyle(0, 0);
-					dis.graphics.beginFill(0xffffff);
-					label.textColor = 0;
+					dis.graphics.beginFill(0x550000);
 				}else {
-					dis.graphics.lineStyle(0,0xffffff);
-					dis.graphics.beginFill(0);
-					label.textColor = 0xffffff;
+					dis.graphics.beginFill(0x55);
 				}
 				dis.graphics.drawCircle(0, 0, 15);
 				addChild(dis);
@@ -70,7 +68,7 @@ package
 			lastMove.mouseChildren = lastMove.mouseEnabled = false;
 			ai = new AI(board);
 			
-			graphics.lineStyle(0, 0xFF00FF);
+			graphics.lineStyle(0, 0x999999);
 			for (var i:int = 0; i < 10;i++ ) {
 				graphics.moveTo(0, 50 * i);
 				graphics.lineTo(50*8, 50 * i);
@@ -121,7 +119,7 @@ package
 				if (tdis.parent) tdis.parent.removeChild(tdis);
 			}
 			
-			ai.doAI(true, 2);
+			ai.doAI(true, 3);
 			target = ai.bestMove;
 			board.makeMove(target);
 			var dis2:Sprite = piece2dis[target.piece];
